@@ -1,0 +1,25 @@
+proto_library(
+    name='contact_proto',
+    srcs=[
+        'contact.proto'
+    ],
+)
+thrift_library(
+    name='user_thrift',
+    srcs=[
+        'user.thrift'
+    ],
+)
+cc_binary(
+    name='contact_test',
+    srcs=[
+        'main.cpp'
+    ],
+    deps=[':contact_proto', ':user_thrift']
+)
+thrift_library(
+    name='dcmd_thrift',
+    srcs=[
+        'dcmd.thrift'
+    ],
+)
